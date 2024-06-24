@@ -10,8 +10,6 @@ class Solution:
         for num in nums:
             currSum += num
 
-            # if currSum == k:
-            #     count += 1
             if (currSum - k) in prefHash:
                 count += prefHash[currSum-k]
             
