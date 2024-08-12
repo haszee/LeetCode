@@ -3,7 +3,7 @@ class Solution:
         prefix = ""
 
         if len(strs) == 0:
-            return ''
+            return prefix
 
         for i in range(len(min(strs, key=len))):
             letters = [str[i] for str in strs]
