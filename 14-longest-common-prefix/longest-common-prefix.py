@@ -2,6 +2,9 @@ class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         prefix = ""
 
+        if len(strs) == 0:
+            return ''
+
         for i in range(len(min(strs, key=len))):
             letters = [str[i] for str in strs]
 
