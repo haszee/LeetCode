@@ -16,7 +16,7 @@ class Solution:
         head = ListNode(-1)
         current = head
         
-        while list1 != None and list2 != None:
+        while list1 and list2:
             if list1.val < list2.val:
                 current.next = list1
                 list1 = list1.next
@@ -25,9 +25,9 @@ class Solution:
                 list2 = list2.next
             current = current.next  
 
-        if list1 != None:
+        if list1:
             current.next = list1
-        elif list2 != None:
+        elif list2:
             current.next = list2
         
         return head.next
