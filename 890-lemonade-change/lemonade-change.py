@@ -1,27 +1,23 @@
 class Solution:
     def lemonadeChange(self, bills: List[int]) -> bool:
-        cashier = []
-        
+        fives = tens = 0
         for bill in bills:
             if bill == 5:
-                cashier.append(bill)
+                fives += 1
             elif bill == 10:
-                try:
-                    cashier.remove(5)
-                    cashier.append(10)
-                except:
+                if fives == 0:
                     return False
+                else:
+                    fives -= 1
+                    tens += 1
             else:
-                try:
-                    cashier.remove(10)
-                    cashier.remove(5)
-                except:
-                    try:
-                        cashier.remove(5)
-                        cashier.remove(5)
-                        cashier.remove(5)
-                    except:
-                        return False
+                if tens >= 1 and fives >=1:
+                    fives -= 1
+                    tens -= 1
+                elif tens == 0 and fives >=3:
+                    fives -= 3
+                else:
+                    return False
         return True
 
 
