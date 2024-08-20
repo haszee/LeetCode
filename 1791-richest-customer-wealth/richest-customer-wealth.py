@@ -3,8 +3,6 @@ class Solution:
         result = []
         
         for customer in accounts:
-            money = 0
-            for bank in customer:
-                money += bank
-            result.append(money)
+            result.append(sum(customer))
+            
         return max(result)
